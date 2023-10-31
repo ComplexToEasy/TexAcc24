@@ -37,8 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.PasswordErrorlbl = new System.Windows.Forms.Label();
             this.UsernameErrorLbe = new System.Windows.Forms.Label();
-            this.AddX = new System.Windows.Forms.Button();
-            this.AddY = new System.Windows.Forms.Button();
             this.LeftPanel.SuspendLayout();
             this.TopPanel.SuspendLayout();
             this.StatusPanel.SuspendLayout();
@@ -58,7 +56,12 @@
             // 
             // TopPanel
             // 
-            this.TopPanel.Size = new System.Drawing.Size(695, 100);
+            this.TopPanel.Size = new System.Drawing.Size(1272, 100);
+            // 
+            // HeadingLable
+            // 
+            this.HeadingLable.Location = new System.Drawing.Point(320, 31);
+            this.HeadingLable.Size = new System.Drawing.Size(669, 31);
             // 
             // StatusPanel
             // 
@@ -100,6 +103,7 @@
             this.PasswordTxt.Name = "PasswordTxt";
             this.PasswordTxt.Size = new System.Drawing.Size(255, 23);
             this.PasswordTxt.TabIndex = 17;
+            this.PasswordTxt.Text = "abc";
             this.PasswordTxt.UseSystemPasswordChar = true;
             // 
             // UsernameTxt
@@ -109,6 +113,7 @@
             this.UsernameTxt.Name = "UsernameTxt";
             this.UsernameTxt.Size = new System.Drawing.Size(255, 23);
             this.UsernameTxt.TabIndex = 16;
+            this.UsernameTxt.Text = "admin";
             // 
             // label4
             // 
@@ -152,46 +157,19 @@
             this.UsernameErrorLbe.TabIndex = 23;
             this.UsernameErrorLbe.Text = "*";
             // 
-            // AddX
-            // 
-            this.AddX.Location = new System.Drawing.Point(479, 171);
-            this.AddX.Name = "AddX";
-            this.AddX.Size = new System.Drawing.Size(75, 23);
-            this.AddX.TabIndex = 1;
-            this.AddX.Text = "Add X";
-            this.AddX.UseVisualStyleBackColor = true;
-            this.AddX.Click += new System.EventHandler(this.AddX_Click);
-            // 
-            // AddY
-            // 
-            this.AddY.Location = new System.Drawing.Point(560, 171);
-            this.AddY.Name = "AddY";
-            this.AddY.Size = new System.Drawing.Size(75, 23);
-            this.AddY.TabIndex = 1;
-            this.AddY.Text = "Add Y";
-            this.AddY.UseVisualStyleBackColor = true;
-            this.AddY.Click += new System.EventHandler(this.AddY_Click);
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 740);
+            this.ClientSize = new System.Drawing.Size(1533, 740);
             this.ControlBox = false;
-            this.Controls.Add(this.AddY);
-            this.Controls.Add(this.AddX);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.Controls.SetChildIndex(this.LeftPanel, 0);
-            this.Controls.SetChildIndex(this.TopPanel, 0);
-            this.Controls.SetChildIndex(this.AddX, 0);
-            this.Controls.SetChildIndex(this.AddY, 0);
             this.LeftPanel.ResumeLayout(false);
             this.LeftPanel.PerformLayout();
             this.TopPanel.ResumeLayout(false);
-            this.TopPanel.PerformLayout();
             this.StatusPanel.ResumeLayout(false);
             this.StatusPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -210,8 +188,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label PasswordErrorlbl;
         private System.Windows.Forms.Label UsernameErrorLbe;
-        private System.Windows.Forms.Button AddX;
-        private System.Windows.Forms.Button AddY;
     }
 }
 

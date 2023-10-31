@@ -34,15 +34,17 @@ namespace TexAcc24
             this.BtnPanel = new System.Windows.Forms.Panel();
             this.SearchGroupBox = new System.Windows.Forms.GroupBox();
             this.SearchTxt = new System.Windows.Forms.TextBox();
+            this.ClearScreenBtn = new System.Windows.Forms.Button();
             this.ShowBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.SaveBtn = new System.Windows.Forms.Button();
-            this.EditBtn = new System.Windows.Forms.Button();
-            this.AddBtn = new System.Windows.Forms.Button();
+            this.UpdateBtn = new System.Windows.Forms.Button();
+            this.AddNewBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
             this.StatusPanel = new System.Windows.Forms.Panel();
             this.StatusLbl = new System.Windows.Forms.Label();
             this.LeftPanel.SuspendLayout();
+            this.TopPanel.SuspendLayout();
             this.BtnPanel.SuspendLayout();
             this.SearchGroupBox.SuspendLayout();
             this.StatusPanel.SuspendLayout();
@@ -54,20 +56,25 @@ namespace TexAcc24
             this.LeftPanel.Controls.Add(this.BackBtn);
             this.LeftPanel.Size = new System.Drawing.Size(261, 768);
             // 
-            // panel1
+            // TopPanel
             // 
             this.TopPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.TopPanel.Size = new System.Drawing.Size(976, 100);
+            // 
+            // HeadingLable
+            // 
+            this.HeadingLable.Size = new System.Drawing.Size(0, 31);
             // 
             // BtnPanel
             // 
             this.BtnPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnPanel.Controls.Add(this.SearchGroupBox);
+            this.BtnPanel.Controls.Add(this.ClearScreenBtn);
             this.BtnPanel.Controls.Add(this.ShowBtn);
             this.BtnPanel.Controls.Add(this.DeleteBtn);
             this.BtnPanel.Controls.Add(this.SaveBtn);
-            this.BtnPanel.Controls.Add(this.EditBtn);
-            this.BtnPanel.Controls.Add(this.AddBtn);
+            this.BtnPanel.Controls.Add(this.UpdateBtn);
+            this.BtnPanel.Controls.Add(this.AddNewBtn);
             this.BtnPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.BtnPanel.Location = new System.Drawing.Point(261, 100);
             this.BtnPanel.Name = "BtnPanel";
@@ -76,10 +83,14 @@ namespace TexAcc24
             // 
             // SearchGroupBox
             // 
+            this.SearchGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SearchGroupBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SearchGroupBox.Controls.Add(this.SearchTxt);
-            this.SearchGroupBox.Location = new System.Drawing.Point(576, 6);
+            this.SearchGroupBox.Location = new System.Drawing.Point(678, 6);
             this.SearchGroupBox.Name = "SearchGroupBox";
-            this.SearchGroupBox.Size = new System.Drawing.Size(198, 52);
+            this.SearchGroupBox.Size = new System.Drawing.Size(295, 52);
             this.SearchGroupBox.TabIndex = 1;
             this.SearchGroupBox.TabStop = false;
             this.SearchGroupBox.Text = "Search";
@@ -90,68 +101,99 @@ namespace TexAcc24
             this.SearchTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchTxt.Location = new System.Drawing.Point(3, 26);
             this.SearchTxt.Name = "SearchTxt";
-            this.SearchTxt.Size = new System.Drawing.Size(192, 23);
+            this.SearchTxt.Size = new System.Drawing.Size(289, 23);
             this.SearchTxt.TabIndex = 0;
+            this.SearchTxt.TextChanged += new System.EventHandler(this.SearchTxt_TextChanged);
+            // 
+            // ClearScreenBtn
+            // 
+            this.ClearScreenBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClearScreenBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ClearScreenBtn.FlatAppearance.BorderSize = 2;
+            this.ClearScreenBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearScreenBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearScreenBtn.Location = new System.Drawing.Point(550, 0);
+            this.ClearScreenBtn.Name = "ClearScreenBtn";
+            this.ClearScreenBtn.Size = new System.Drawing.Size(110, 58);
+            this.ClearScreenBtn.TabIndex = 4;
+            this.ClearScreenBtn.Text = "Clear Screen";
+            this.ClearScreenBtn.UseVisualStyleBackColor = true;
+            this.ClearScreenBtn.Click += new System.EventHandler(this.ClearScreen_Click);
             // 
             // ShowBtn
             // 
+            this.ShowBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ShowBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.ShowBtn.FlatAppearance.BorderSize = 2;
             this.ShowBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowBtn.Location = new System.Drawing.Point(460, 5);
+            this.ShowBtn.Location = new System.Drawing.Point(440, 0);
             this.ShowBtn.Name = "ShowBtn";
-            this.ShowBtn.Size = new System.Drawing.Size(110, 53);
-            this.ShowBtn.TabIndex = 0;
+            this.ShowBtn.Size = new System.Drawing.Size(110, 58);
+            this.ShowBtn.TabIndex = 5;
             this.ShowBtn.Text = "Show";
             this.ShowBtn.UseVisualStyleBackColor = true;
+            this.ShowBtn.Click += new System.EventHandler(this.ShowBtn_Click);
             // 
             // DeleteBtn
             // 
+            this.DeleteBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.DeleteBtn.FlatAppearance.BorderSize = 2;
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Location = new System.Drawing.Point(344, 3);
+            this.DeleteBtn.Location = new System.Drawing.Point(330, 0);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(110, 53);
-            this.DeleteBtn.TabIndex = 0;
+            this.DeleteBtn.Size = new System.Drawing.Size(110, 58);
+            this.DeleteBtn.TabIndex = 3;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // SaveBtn
             // 
+            this.SaveBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.SaveBtn.Dock = System.Windows.Forms.DockStyle.Left;
             this.SaveBtn.FlatAppearance.BorderSize = 2;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Location = new System.Drawing.Point(228, 3);
+            this.SaveBtn.Location = new System.Drawing.Point(220, 0);
             this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(110, 53);
-            this.SaveBtn.TabIndex = 0;
+            this.SaveBtn.Size = new System.Drawing.Size(110, 58);
+            this.SaveBtn.TabIndex = 2;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
-            // EditBtn
+            // UpdateBtn
             // 
-            this.EditBtn.FlatAppearance.BorderSize = 2;
-            this.EditBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.Location = new System.Drawing.Point(116, 3);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(110, 53);
-            this.EditBtn.TabIndex = 0;
-            this.EditBtn.Text = "Edit";
-            this.EditBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.UpdateBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UpdateBtn.FlatAppearance.BorderSize = 2;
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateBtn.Location = new System.Drawing.Point(110, 0);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(110, 58);
+            this.UpdateBtn.TabIndex = 1;
+            this.UpdateBtn.Text = "Update";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
-            // AddBtn
+            // AddNewBtn
             // 
-            this.AddBtn.FlatAppearance.BorderSize = 2;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddBtn.Location = new System.Drawing.Point(0, 3);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(110, 53);
-            this.AddBtn.TabIndex = 0;
-            this.AddBtn.Text = "Add";
-            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddNewBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AddNewBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.AddNewBtn.FlatAppearance.BorderSize = 2;
+            this.AddNewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddNewBtn.Location = new System.Drawing.Point(0, 0);
+            this.AddNewBtn.Name = "AddNewBtn";
+            this.AddNewBtn.Size = new System.Drawing.Size(110, 58);
+            this.AddNewBtn.TabIndex = 0;
+            this.AddNewBtn.Text = "Add new";
+            this.AddNewBtn.UseVisualStyleBackColor = true;
+            this.AddNewBtn.Click += new System.EventHandler(this.AddNewBtn_Click);
             // 
             // BackBtn
             // 
@@ -199,6 +241,7 @@ namespace TexAcc24
             this.Controls.SetChildIndex(this.TopPanel, 0);
             this.Controls.SetChildIndex(this.BtnPanel, 0);
             this.LeftPanel.ResumeLayout(false);
+            this.TopPanel.ResumeLayout(false);
             this.BtnPanel.ResumeLayout(false);
             this.SearchGroupBox.ResumeLayout(false);
             this.SearchGroupBox.PerformLayout();
@@ -207,23 +250,23 @@ namespace TexAcc24
             this.ResumeLayout(false);
 
         }
-
-        private System.Windows.Forms.Button EditBtn;
-        private System.Windows.Forms.Panel BtnPanel;
-        private System.Windows.Forms.Button SaveBtn;
-        private System.Windows.Forms.Button DeleteBtn;
-        private System.Windows.Forms.Button ShowBtn;
-        private System.Windows.Forms.GroupBox SearchGroupBox;
         protected System.Windows.Forms.TextBox SearchTxt;
 
-        protected System.Windows.Forms.Button AddBtn;
+        protected System.Windows.Forms.Button AddNewBtn;
 
         private System.Windows.Forms.Panel panel2;
 
         #endregion
 
         protected System.Windows.Forms.Button BackBtn;
-        private System.Windows.Forms.Panel StatusPanel;
-        private System.Windows.Forms.Label StatusLbl;
+        protected System.Windows.Forms.Button UpdateBtn;
+        protected System.Windows.Forms.Button SaveBtn;
+        protected System.Windows.Forms.Button DeleteBtn;
+        protected System.Windows.Forms.Button ShowBtn;
+        protected System.Windows.Forms.Button ClearScreenBtn;
+        protected System.Windows.Forms.Panel StatusPanel;
+        protected System.Windows.Forms.Label StatusLbl;
+        protected System.Windows.Forms.Panel BtnPanel;
+        protected System.Windows.Forms.GroupBox SearchGroupBox;
     }
 }

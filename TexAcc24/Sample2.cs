@@ -15,5 +15,40 @@ namespace TexAcc24
             HomeScreen home = new HomeScreen();
             Mcls.ShowWin(home, Mdi.ActiveForm);
         }
+
+        protected virtual void AddNewBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void DeleteBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void SaveBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void UpdateBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void ShowBtn_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void ClearScreen_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        protected virtual void SearchTxt_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
