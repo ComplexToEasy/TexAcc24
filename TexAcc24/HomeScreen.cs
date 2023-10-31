@@ -34,5 +34,11 @@ namespace TexAcc24
             Items i = new Items();
             Mcls.ShowWin(i, this, Mdi.ActiveForm);
         }
+
+        private void CategoryBtn_Click(object sender, EventArgs e)
+        {
+            Category c = new Category();
+            Mcls.ShowWin(c, this, Mdi.ActiveForm);
+        }
     }
 }

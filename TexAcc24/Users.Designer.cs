@@ -147,7 +147,7 @@
             // 
             this.HeadingLable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.HeadingLable.Location = new System.Drawing.Point(403, 30);
-            this.HeadingLable.Size = new System.Drawing.Size(412, 31);
+            this.HeadingLable.Size = new System.Drawing.Size(624, 31);
             // 
             // PasswordTxt
             // 

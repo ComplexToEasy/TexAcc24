@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UserBtn = new System.Windows.Forms.Button();
             this.Items = new System.Windows.Forms.Button();
+            this.CategoryBtn = new System.Windows.Forms.Button();
             this.TopPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             // 
             // HeadingLable
             // 
-            this.HeadingLable.Size = new System.Drawing.Size(228, 31);
+            this.HeadingLable.Size = new System.Drawing.Size(80, 31);
             // 
             // tableLayoutPanel1
             // 
@@ -58,6 +59,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.UserBtn, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Items, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.CategoryBtn, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(261, 100);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,6 +101,20 @@
             this.Items.UseVisualStyleBackColor = true;
             this.Items.Click += new System.EventHandler(this.Items_Click);
             // 
+            // CategoryBtn
+            // 
+            this.CategoryBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CategoryBtn.FlatAppearance.BorderSize = 2;
+            this.CategoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CategoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.CategoryBtn.Location = new System.Drawing.Point(345, 3);
+            this.CategoryBtn.Name = "CategoryBtn";
+            this.CategoryBtn.Size = new System.Drawing.Size(165, 120);
+            this.CategoryBtn.TabIndex = 2;
+            this.CategoryBtn.Text = "Category";
+            this.CategoryBtn.UseVisualStyleBackColor = true;
+            this.CategoryBtn.Click += new System.EventHandler(this.CategoryBtn_Click);
+            // 
             // HomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,5 +138,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button UserBtn;
         private System.Windows.Forms.Button Items;
+        private System.Windows.Forms.Button CategoryBtn;
     }
 }

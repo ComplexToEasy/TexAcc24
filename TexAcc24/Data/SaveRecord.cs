@@ -44,5 +44,24 @@ namespace TexAcc24.Data
             }
 
         }
+        public static void InsertCategory(string cName)
+        {
+            try
+            {
+                Mcls.conn.Open();
+                SqlCommand cmd = new SqlCommand("InsertCategory", Mcls.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@name", cName);
+                
+                cmd.ExecuteNonQuery();
+                Mcls.conn.Close();
+            }
+            catch (Exception e)
+            {
+                Mcls.conn.Close();
+                
+            }
+
+        }
     }
 }

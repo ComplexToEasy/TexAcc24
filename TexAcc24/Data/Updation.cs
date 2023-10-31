@@ -54,6 +54,26 @@ namespace TexAcc24.Data
             }
 
         }
+        public static void UpdateCategory(int id,string cName)
+        {
+            try
+            {
+                Mcls.conn.Open();
+                SqlCommand cmd = new SqlCommand("UpdateCategory", Mcls.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@name", cName);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+                Mcls.conn.Close();
+            }
+            catch (Exception e)
+            {
+                Mcls.conn.Close();
+
+            }
+
+        }
 
     }
 }

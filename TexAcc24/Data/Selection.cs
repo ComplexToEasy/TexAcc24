@@ -43,5 +43,24 @@ namespace TexAcc24.Data
 
             Mcls.conn.Close();
         }
+        public void GetCategoryData(DataGridView gv, DataGridViewColumn idGv, DataGridViewColumn NameGv)
+        {
+            SqlCommand cmd;
+            Mcls.conn.Open();
+                cmd = new SqlCommand("GetCategoryData", Mcls.conn);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+            SqlDataAdapter sdr = new SqlDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+            sdr.Fill(dt);
+            idGv.DataPropertyName = dt.Columns["ID"].ToString();
+            NameGv.DataPropertyName = dt.Columns["Category"].ToString();
+            gv.DataSource = dt;
+
+            Mcls.conn.Close();
+        }
     }
 }

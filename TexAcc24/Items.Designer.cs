@@ -30,20 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.RoleCombo = new System.Windows.Forms.ComboBox();
-            this.IsActiveChk = new System.Windows.Forms.CheckBox();
-            this.PasswordTxt = new System.Windows.Forms.TextBox();
-            this.UserNameTxt = new System.Windows.Forms.TextBox();
-            this.LoginNameTxt = new System.Windows.Forms.TextBox();
-            this.PhoneTxt = new System.Windows.Forms.TextBox();
+            this.SatatusCombo = new System.Windows.Forms.ComboBox();
+            this.PrateTxt = new System.Windows.Forms.TextBox();
+            this.ItemNameTxt = new System.Windows.Forms.TextBox();
+            this.SaleRateTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.userNameErrLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lablesale = new System.Windows.Forms.Label();
             this.LoginNameErrLbl = new System.Windows.Forms.Label();
-            this.isActiveErrLbl = new System.Windows.Forms.Label();
             this.roleErrorLble = new System.Windows.Forms.Label();
             this.PasswordErrorlbl = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
@@ -54,6 +50,8 @@
             this.PhoneGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RollGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActiveGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CatCombo = new System.Windows.Forms.ComboBox();
             this.StatusPanel.SuspendLayout();
             this.BtnPanel.SuspendLayout();
             this.SearchGroupBox.SuspendLayout();
@@ -64,7 +62,8 @@
             // 
             // SearchTxt
             // 
-            this.SearchTxt.Size = new System.Drawing.Size(76, 23);
+            this.SearchTxt.Location = new System.Drawing.Point(3, 32);
+            this.SearchTxt.Size = new System.Drawing.Size(209, 23);
             // 
             // AddNewBtn
             // 
@@ -100,24 +99,25 @@
             // 
             // SearchGroupBox
             // 
-            this.SearchGroupBox.Size = new System.Drawing.Size(82, 52);
+            this.SearchGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
+            this.SearchGroupBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SearchGroupBox.Location = new System.Drawing.Point(660, 0);
+            this.SearchGroupBox.Size = new System.Drawing.Size(215, 58);
             // 
             // LeftPanel
             // 
-            this.LeftPanel.Controls.Add(this.RoleCombo);
-            this.LeftPanel.Controls.Add(this.IsActiveChk);
-            this.LeftPanel.Controls.Add(this.PasswordTxt);
-            this.LeftPanel.Controls.Add(this.UserNameTxt);
-            this.LeftPanel.Controls.Add(this.LoginNameTxt);
-            this.LeftPanel.Controls.Add(this.PhoneTxt);
+            this.LeftPanel.Controls.Add(this.CatCombo);
+            this.LeftPanel.Controls.Add(this.SatatusCombo);
+            this.LeftPanel.Controls.Add(this.PrateTxt);
+            this.LeftPanel.Controls.Add(this.ItemNameTxt);
+            this.LeftPanel.Controls.Add(this.SaleRateTxt);
+            this.LeftPanel.Controls.Add(this.label1);
             this.LeftPanel.Controls.Add(this.label6);
             this.LeftPanel.Controls.Add(this.label4);
-            this.LeftPanel.Controls.Add(this.label2);
             this.LeftPanel.Controls.Add(this.userNameErrLbl);
             this.LeftPanel.Controls.Add(this.label5);
-            this.LeftPanel.Controls.Add(this.label3);
+            this.LeftPanel.Controls.Add(this.lablesale);
             this.LeftPanel.Controls.Add(this.LoginNameErrLbl);
-            this.LeftPanel.Controls.Add(this.isActiveErrLbl);
             this.LeftPanel.Controls.Add(this.roleErrorLble);
             this.LeftPanel.Controls.Add(this.PasswordErrorlbl);
             this.LeftPanel.Size = new System.Drawing.Size(261, 762);
@@ -125,90 +125,69 @@
             this.LeftPanel.Controls.SetChildIndex(this.StatusPanel, 0);
             this.LeftPanel.Controls.SetChildIndex(this.PasswordErrorlbl, 0);
             this.LeftPanel.Controls.SetChildIndex(this.roleErrorLble, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.isActiveErrLbl, 0);
             this.LeftPanel.Controls.SetChildIndex(this.LoginNameErrLbl, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.label3, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.lablesale, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label5, 0);
             this.LeftPanel.Controls.SetChildIndex(this.userNameErrLbl, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.label2, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label4, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label6, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.PhoneTxt, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.LoginNameTxt, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.UserNameTxt, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.PasswordTxt, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.IsActiveChk, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.RoleCombo, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.label1, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.SaleRateTxt, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.ItemNameTxt, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.PrateTxt, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.SatatusCombo, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.CatCombo, 0);
             // 
             // TopPanel
             // 
             this.TopPanel.Size = new System.Drawing.Size(905, 100);
             // 
-            // RoleCombo
+            // SatatusCombo
             // 
-            this.RoleCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RoleCombo.FormattingEnabled = true;
-            this.RoleCombo.Items.AddRange(new object[] {
+            this.SatatusCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.SatatusCombo.FormattingEnabled = true;
+            this.SatatusCombo.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.RoleCombo.Location = new System.Drawing.Point(3, 448);
-            this.RoleCombo.Name = "RoleCombo";
-            this.RoleCombo.Size = new System.Drawing.Size(254, 21);
-            this.RoleCombo.TabIndex = 35;
+            this.SatatusCombo.Location = new System.Drawing.Point(3, 448);
+            this.SatatusCombo.Name = "SatatusCombo";
+            this.SatatusCombo.Size = new System.Drawing.Size(254, 21);
+            this.SatatusCombo.TabIndex = 35;
             // 
-            // IsActiveChk
+            // PrateTxt
             // 
-            this.IsActiveChk.AutoSize = true;
-            this.IsActiveChk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.IsActiveChk.Location = new System.Drawing.Point(7, 478);
-            this.IsActiveChk.Name = "IsActiveChk";
-            this.IsActiveChk.Size = new System.Drawing.Size(79, 21);
-            this.IsActiveChk.TabIndex = 36;
-            this.IsActiveChk.Text = "Is Active";
-            this.IsActiveChk.UseVisualStyleBackColor = true;
+            this.PrateTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrateTxt.Location = new System.Drawing.Point(3, 365);
+            this.PrateTxt.Name = "PrateTxt";
+            this.PrateTxt.Size = new System.Drawing.Size(255, 23);
+            this.PrateTxt.TabIndex = 33;
+            this.PrateTxt.UseSystemPasswordChar = true;
             // 
-            // PasswordTxt
+            // ItemNameTxt
             // 
-            this.PasswordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTxt.Location = new System.Drawing.Point(3, 365);
-            this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.Size = new System.Drawing.Size(255, 23);
-            this.PasswordTxt.TabIndex = 33;
-            this.PasswordTxt.UseSystemPasswordChar = true;
+            this.ItemNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ItemNameTxt.Location = new System.Drawing.Point(3, 322);
+            this.ItemNameTxt.Name = "ItemNameTxt";
+            this.ItemNameTxt.Size = new System.Drawing.Size(255, 23);
+            this.ItemNameTxt.TabIndex = 32;
             // 
-            // UserNameTxt
+            // SaleRateTxt
             // 
-            this.UserNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserNameTxt.Location = new System.Drawing.Point(3, 281);
-            this.UserNameTxt.Name = "UserNameTxt";
-            this.UserNameTxt.Size = new System.Drawing.Size(255, 23);
-            this.UserNameTxt.TabIndex = 31;
-            // 
-            // LoginNameTxt
-            // 
-            this.LoginNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginNameTxt.Location = new System.Drawing.Point(3, 322);
-            this.LoginNameTxt.Name = "LoginNameTxt";
-            this.LoginNameTxt.Size = new System.Drawing.Size(255, 23);
-            this.LoginNameTxt.TabIndex = 32;
-            // 
-            // PhoneTxt
-            // 
-            this.PhoneTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneTxt.Location = new System.Drawing.Point(2, 406);
-            this.PhoneTxt.Name = "PhoneTxt";
-            this.PhoneTxt.Size = new System.Drawing.Size(255, 23);
-            this.PhoneTxt.TabIndex = 34;
+            this.SaleRateTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaleRateTxt.Location = new System.Drawing.Point(2, 406);
+            this.SaleRateTxt.Name = "SaleRateTxt";
+            this.SaleRateTxt.Size = new System.Drawing.Size(255, 23);
+            this.SaleRateTxt.TabIndex = 34;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 263);
+            this.label6.Location = new System.Drawing.Point(4, 257);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 17);
+            this.label6.Size = new System.Drawing.Size(65, 17);
             this.label6.TabIndex = 38;
-            this.label6.Text = "Item Name";
+            this.label6.Text = "Category";
             // 
             // label4
             // 
@@ -216,20 +195,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(4, 344);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.Size = new System.Drawing.Size(102, 17);
             this.label4.TabIndex = 37;
-            this.label4.Text = "Password";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 304);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 17);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Login Name";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Text = "Purchase Rate";
             // 
             // userNameErrLbl
             // 
@@ -249,19 +217,19 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 429);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 17);
+            this.label5.Size = new System.Drawing.Size(48, 17);
             this.label5.TabIndex = 40;
-            this.label5.Text = "Role";
+            this.label5.Text = "Status";
             // 
-            // label3
+            // lablesale
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 388);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Phone";
+            this.lablesale.AutoSize = true;
+            this.lablesale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablesale.Location = new System.Drawing.Point(3, 388);
+            this.lablesale.Name = "lablesale";
+            this.lablesale.Size = new System.Drawing.Size(70, 17);
+            this.lablesale.TabIndex = 41;
+            this.lablesale.Text = "Sale Rate";
             // 
             // LoginNameErrLbl
             // 
@@ -274,18 +242,6 @@
             this.LoginNameErrLbl.TabIndex = 44;
             this.LoginNameErrLbl.Text = "*";
             this.LoginNameErrLbl.Visible = false;
-            // 
-            // isActiveErrLbl
-            // 
-            this.isActiveErrLbl.AutoSize = true;
-            this.isActiveErrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isActiveErrLbl.ForeColor = System.Drawing.Color.Red;
-            this.isActiveErrLbl.Location = new System.Drawing.Point(92, 484);
-            this.isActiveErrLbl.Name = "isActiveErrLbl";
-            this.isActiveErrLbl.Size = new System.Drawing.Size(12, 15);
-            this.isActiveErrLbl.TabIndex = 45;
-            this.isActiveErrLbl.Text = "*";
-            this.isActiveErrLbl.Visible = false;
             // 
             // roleErrorLble
             // 
@@ -393,6 +349,26 @@
             this.IsActiveGv.Name = "IsActiveGv";
             this.IsActiveGv.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 304);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 17);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Item Name";
+            // 
+            // CatCombo
+            // 
+            this.CatCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CatCombo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.CatCombo.FormattingEnabled = true;
+            this.CatCombo.Location = new System.Drawing.Point(4, 280);
+            this.CatCombo.Name = "CatCombo";
+            this.CatCombo.Size = new System.Drawing.Size(252, 24);
+            this.CatCombo.TabIndex = 47;
+            // 
             // Items
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,20 +396,16 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox RoleCombo;
-        private System.Windows.Forms.CheckBox IsActiveChk;
-        private System.Windows.Forms.TextBox PasswordTxt;
-        private System.Windows.Forms.TextBox UserNameTxt;
-        private System.Windows.Forms.TextBox LoginNameTxt;
-        private System.Windows.Forms.TextBox PhoneTxt;
+        private System.Windows.Forms.ComboBox SatatusCombo;
+        private System.Windows.Forms.TextBox PrateTxt;
+        private System.Windows.Forms.TextBox ItemNameTxt;
+        private System.Windows.Forms.TextBox SaleRateTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label userNameErrLbl;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lablesale;
         private System.Windows.Forms.Label LoginNameErrLbl;
-        private System.Windows.Forms.Label isActiveErrLbl;
         private System.Windows.Forms.Label roleErrorLble;
         private System.Windows.Forms.Label PasswordErrorlbl;
         private System.Windows.Forms.DataGridView dataGridView;
@@ -444,5 +416,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PhoneGv;
         private System.Windows.Forms.DataGridViewTextBoxColumn RollGv;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsActiveGv;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CatCombo;
     }
 }
