@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SatatusCombo = new System.Windows.Forms.ComboBox();
             this.PrateTxt = new System.Windows.Forms.TextBox();
             this.ItemNameTxt = new System.Windows.Forms.TextBox();
             this.SaleRateTxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.userNameErrLbl = new System.Windows.Forms.Label();
+            this.CatNameErrLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lablesale = new System.Windows.Forms.Label();
-            this.LoginNameErrLbl = new System.Windows.Forms.Label();
-            this.roleErrorLble = new System.Windows.Forms.Label();
-            this.PasswordErrorlbl = new System.Windows.Forms.Label();
+            this.NameErrLbl = new System.Windows.Forms.Label();
+            this.StatusErrorLble = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.IdGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoginNameGv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,21 +113,19 @@
             this.LeftPanel.Controls.Add(this.label1);
             this.LeftPanel.Controls.Add(this.label6);
             this.LeftPanel.Controls.Add(this.label4);
-            this.LeftPanel.Controls.Add(this.userNameErrLbl);
+            this.LeftPanel.Controls.Add(this.CatNameErrLbl);
             this.LeftPanel.Controls.Add(this.label5);
             this.LeftPanel.Controls.Add(this.lablesale);
-            this.LeftPanel.Controls.Add(this.LoginNameErrLbl);
-            this.LeftPanel.Controls.Add(this.roleErrorLble);
-            this.LeftPanel.Controls.Add(this.PasswordErrorlbl);
+            this.LeftPanel.Controls.Add(this.NameErrLbl);
+            this.LeftPanel.Controls.Add(this.StatusErrorLble);
             this.LeftPanel.Size = new System.Drawing.Size(261, 762);
             this.LeftPanel.Controls.SetChildIndex(this.BackBtn, 0);
             this.LeftPanel.Controls.SetChildIndex(this.StatusPanel, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.PasswordErrorlbl, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.roleErrorLble, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.LoginNameErrLbl, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.StatusErrorLble, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.NameErrLbl, 0);
             this.LeftPanel.Controls.SetChildIndex(this.lablesale, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label5, 0);
-            this.LeftPanel.Controls.SetChildIndex(this.userNameErrLbl, 0);
+            this.LeftPanel.Controls.SetChildIndex(this.CatNameErrLbl, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label4, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label6, 0);
             this.LeftPanel.Controls.SetChildIndex(this.label1, 0);
@@ -147,8 +144,8 @@
             this.SatatusCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SatatusCombo.FormattingEnabled = true;
             this.SatatusCombo.Items.AddRange(new object[] {
-            "Admin",
-            "User"});
+            "Yes",
+            "No"});
             this.SatatusCombo.Location = new System.Drawing.Point(3, 448);
             this.SatatusCombo.Name = "SatatusCombo";
             this.SatatusCombo.Size = new System.Drawing.Size(254, 21);
@@ -199,17 +196,17 @@
             this.label4.TabIndex = 37;
             this.label4.Text = "Purchase Rate";
             // 
-            // userNameErrLbl
+            // CatNameErrLbl
             // 
-            this.userNameErrLbl.AutoSize = true;
-            this.userNameErrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameErrLbl.ForeColor = System.Drawing.Color.Red;
-            this.userNameErrLbl.Location = new System.Drawing.Point(245, 265);
-            this.userNameErrLbl.Name = "userNameErrLbl";
-            this.userNameErrLbl.Size = new System.Drawing.Size(12, 15);
-            this.userNameErrLbl.TabIndex = 43;
-            this.userNameErrLbl.Text = "*";
-            this.userNameErrLbl.Visible = false;
+            this.CatNameErrLbl.AutoSize = true;
+            this.CatNameErrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CatNameErrLbl.ForeColor = System.Drawing.Color.Red;
+            this.CatNameErrLbl.Location = new System.Drawing.Point(245, 265);
+            this.CatNameErrLbl.Name = "CatNameErrLbl";
+            this.CatNameErrLbl.Size = new System.Drawing.Size(12, 15);
+            this.CatNameErrLbl.TabIndex = 43;
+            this.CatNameErrLbl.Text = "*";
+            this.CatNameErrLbl.Visible = false;
             // 
             // label5
             // 
@@ -231,41 +228,29 @@
             this.lablesale.TabIndex = 41;
             this.lablesale.Text = "Sale Rate";
             // 
-            // LoginNameErrLbl
+            // NameErrLbl
             // 
-            this.LoginNameErrLbl.AutoSize = true;
-            this.LoginNameErrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoginNameErrLbl.ForeColor = System.Drawing.Color.Red;
-            this.LoginNameErrLbl.Location = new System.Drawing.Point(245, 306);
-            this.LoginNameErrLbl.Name = "LoginNameErrLbl";
-            this.LoginNameErrLbl.Size = new System.Drawing.Size(12, 15);
-            this.LoginNameErrLbl.TabIndex = 44;
-            this.LoginNameErrLbl.Text = "*";
-            this.LoginNameErrLbl.Visible = false;
+            this.NameErrLbl.AutoSize = true;
+            this.NameErrLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameErrLbl.ForeColor = System.Drawing.Color.Red;
+            this.NameErrLbl.Location = new System.Drawing.Point(245, 306);
+            this.NameErrLbl.Name = "NameErrLbl";
+            this.NameErrLbl.Size = new System.Drawing.Size(12, 15);
+            this.NameErrLbl.TabIndex = 44;
+            this.NameErrLbl.Text = "*";
+            this.NameErrLbl.Visible = false;
             // 
-            // roleErrorLble
+            // StatusErrorLble
             // 
-            this.roleErrorLble.AutoSize = true;
-            this.roleErrorLble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roleErrorLble.ForeColor = System.Drawing.Color.Red;
-            this.roleErrorLble.Location = new System.Drawing.Point(245, 432);
-            this.roleErrorLble.Name = "roleErrorLble";
-            this.roleErrorLble.Size = new System.Drawing.Size(12, 15);
-            this.roleErrorLble.TabIndex = 46;
-            this.roleErrorLble.Text = "*";
-            this.roleErrorLble.Visible = false;
-            // 
-            // PasswordErrorlbl
-            // 
-            this.PasswordErrorlbl.AutoSize = true;
-            this.PasswordErrorlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordErrorlbl.ForeColor = System.Drawing.Color.Red;
-            this.PasswordErrorlbl.Location = new System.Drawing.Point(245, 348);
-            this.PasswordErrorlbl.Name = "PasswordErrorlbl";
-            this.PasswordErrorlbl.Size = new System.Drawing.Size(12, 15);
-            this.PasswordErrorlbl.TabIndex = 42;
-            this.PasswordErrorlbl.Text = "*";
-            this.PasswordErrorlbl.Visible = false;
+            this.StatusErrorLble.AutoSize = true;
+            this.StatusErrorLble.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusErrorLble.ForeColor = System.Drawing.Color.Red;
+            this.StatusErrorLble.Location = new System.Drawing.Point(245, 432);
+            this.StatusErrorLble.Name = "StatusErrorLble";
+            this.StatusErrorLble.Size = new System.Drawing.Size(12, 15);
+            this.StatusErrorLble.TabIndex = 46;
+            this.StatusErrorLble.Text = "*";
+            this.StatusErrorLble.Visible = false;
             // 
             // dataGridView
             // 
@@ -274,14 +259,14 @@
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Chartreuse;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Chartreuse;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdGv,
@@ -296,11 +281,11 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView.Size = new System.Drawing.Size(905, 604);
             this.dataGridView.TabIndex = 3;
@@ -402,12 +387,11 @@
         private System.Windows.Forms.TextBox SaleRateTxt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label userNameErrLbl;
+        private System.Windows.Forms.Label CatNameErrLbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lablesale;
-        private System.Windows.Forms.Label LoginNameErrLbl;
-        private System.Windows.Forms.Label roleErrorLble;
-        private System.Windows.Forms.Label PasswordErrorlbl;
+        private System.Windows.Forms.Label NameErrLbl;
+        private System.Windows.Forms.Label StatusErrorLble;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdGv;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoginNameGv;

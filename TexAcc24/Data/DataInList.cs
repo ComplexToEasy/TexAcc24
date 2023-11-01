@@ -11,7 +11,7 @@ namespace TexAcc24.Data
 {
     public class DataInList
     {
-        public void GetDataInList(string proc, ComboBox cb, string valueMember, string DisplayMember)
+        public void GetDataInList(string proc, ComboBox cb, string valueMember, string DisplayMember, string? tableName = null)
         {
             try
             {
@@ -24,13 +24,18 @@ namespace TexAcc24.Data
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 sda.Fill(dt);
-                
+                DataRow dataRow = dt.NewRow();
+
+                dataRow[DisplayMember] = $"--< Select {tableName} >--";
+                dataRow[valueMember] = 0;
+
+
+                dt.Rows.InsertAt(dataRow, 0);
+
+
                 cb.DataSource = dt;
                 cb.DisplayMember = DisplayMember;
                 cb.ValueMember = valueMember;
-
-                DataRow dataRow = dt.NewRow();
-               // dataRow[]
 
                 Mcls.conn.Close();
             }

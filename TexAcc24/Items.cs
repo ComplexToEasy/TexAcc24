@@ -19,12 +19,180 @@ namespace TexAcc24
         }
 
         private DataInList dil = new DataInList();
+        private string status = "";
+        Selection s = new Selection();
+      //  private SaveRecord _save = new SaveRecord();
+        private Updation u = new Updation();
+        int itemId;
+
+        private void Users_Load(object sender, EventArgs e)
+        {
+            Mcls.Heading(TopPanel, HeadingLable);
+            Mcls.Disable_Reset(LeftPanel);
+            Mcls.DisableBtn(UpdateBtn, SaveBtn, DeleteBtn);
+            CatCombo.SelectedIndex = 0;
+        }
+
+        protected override void DeleteBtn_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                if (itemId != 0)
+                {
+                    DialogResult dr = MessageBox.Show("This record will be deleted. Are you sure?", "Deletion confirmation",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        Deletion d = new Deletion();
+                        d.DeleteIt("DeleteItems", itemId);
+                        Mcls.Heading(TopPanel, HeadingLable);
+                        Mcls.Disable_Reset(LeftPanel);
+                        Mcls.DisableBtn(UpdateBtn, SaveBtn, DeleteBtn);
+                        Mcls.EnableBtn(AddNewBtn);
+
+                        CatCombo.SelectedIndex = 0;
+                        s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv);
+
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                Mcls.ShowMessage("Error in deletion", "Information", "");
+
+            }
+
+        }
+
+        protected override void SaveBtn_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                NameErrLbl.Visible = ItemNameTxt.Text.Trim() == "";
+                CatNameErrLbl.Visible = CatCombo.SelectedIndex == -1;
+                StatusErrorLble.Visible = SatatusCombo.SelectedIndex == -1;
+                if (NameErrLbl.Visible || CatNameErrLbl.Visible || StatusErrorLble.Visible || StatusErrorLble.Visible)
+                {
+                    Mcls.ShowErrorStatus(StatusPanel, StatusLbl);
+                }
+                else
+                {
+                    Mcls.Success(StatusPanel);
+                    SaveRecord.InsertCategory();
+                    Mcls.ShowMessage("Successfully Saved", "Information", "success");
+                    Mcls.Heading(TopPanel, HeadingLable);
+                    Mcls.Disable_Reset(LeftPanel);
+                    Mcls.DisableBtn(UpdateBtn, SaveBtn, DeleteBtn);
+                    RoleCombo.SelectedIndex = 0;
+                    s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv);
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Mcls.ShowMessage("Error in Inserting", "Information", "");
+
+            }
+
+        }
+
+        protected override void UpdateBtn_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                NameErrLbl.Visible = LoginNameTxt.Text.Trim() == "";
+                CatNameErrLbl.Visible = UserNameTxt.Text.Trim() == "";
+                PasswodErrorlbl.Visible = PasswordTxt.Text.Trim() == "";
+                StatusErrorLble.Visible = RoleCombo.SelectedIndex == -1;
+                if (NameErrLbl.Visible || CatNameErrLbl.Visible || StatusErrorLble.Visible || StatusErrorLble.Visible)
+                {
+                    Mcls.ShowErrorStatus(StatusPanel, StatusLbl);
+                }
+                else
+                {
+                    if (IsActiveChk.Checked)
+                    {
+                        status = "Yes";
+                    }
+                    else
+                    {
+                        status = "No";
+                    }
+                    Mcls.Success(StatusPanel);
+                    Updation.UpdateUsers(userId, LoginNameTxt.Text, UserNameTxt.Text, PasswordTxt.Text, RoleCombo.Text, status, PhoneTxt.Text);
+                    Mcls.ShowMessage("Successfully Update", "Information", "success");
+                    Mcls.Heading(TopPanel, HeadingLable);
+                    Mcls.Disable_Reset(LeftPanel);
+                    Mcls.DisableBtn(UpdateBtn, SaveBtn, DeleteBtn);
+                    Mcls.EnableBtn(AddNewBtn);
+
+                    RoleCombo.SelectedIndex = 0;
+                    s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv);
+
+                }
+            }
+            catch (Exception exception)
+            {
+                Mcls.ShowMessage("Error in Update", "Information", "");
+
+            }
+
+        }
+
+        protected override void ShowBtn_Click(object sender, System.EventArgs e)
+        {
+            s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv);
+        }
+        protected override void ClearScreen_Click(object sender, System.EventArgs e)
+        {
+            Mcls.Heading(TopPanel, HeadingLable);
+            Mcls.EnableBtn(AddNewBtn);
+
+            Mcls.Disable_Reset(LeftPanel);
+            Mcls.DisableBtn(UpdateBtn, SaveBtn, DeleteBtn);
+            Mcls.Success(StatusPanel);
+            s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv);
+
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != -1 && e.RowIndex != -1)
+            {
+
+                DataGridViewRow row = dataGridView.Rows[e.RowIndex];
+                userId = Convert.ToInt32(row.Cells["IdGv"].Value.ToString());
+                LoginNameTxt.Text = row.Cells["LoginNameGv"].Value.ToString();
+                UserNameTxt.Text = row.Cells["UsernameGv"].Value.ToString();
+                PasswordTxt.Text = row.Cells["PasswordGv"].Value.ToString();
+                PhoneTxt.Text = row.Cells["PhoneGv"].Value.ToString();
+                status = row.Cells["IsActiveGv"].Value.ToString();
+                if (status == "Yes")
+                {
+                    IsActiveChk.CheckState = CheckState.Checked;
+                }
+                else
+                {
+                    IsActiveChk.Checked = false;
+                }
+                RoleCombo.Text = row.Cells["RollGv"].Value.ToString();
+
+
+                Mcls.Enable(LeftPanel);
+                Mcls.EnableBtn(UpdateBtn, DeleteBtn);
+                Mcls.DisableBtn(AddNewBtn, SaveBtn);
+            }
+        }
+        protected override void SearchTxt_TextChanged(object sender, System.EventArgs e)
+        {
+            s.GetUserData(dataGridView, IdGv, LoginNameGv, UsernameGv, PasswordGv, RollGv, IsActiveGv, PhoneGv, SearchTxt.Text);
+        }
         protected override void AddNewBtn_Click(object sender, System.EventArgs e)
         {
             Mcls.Enable_Reset(LeftPanel);
             Mcls.EnableBtn(SaveBtn);
             Mcls.DisableBtn(AddNewBtn);
-            dil.GetDataInList("GetCategoryData", CatCombo, "ID", "Category");
+            dil.GetDataInList("GetCategoryData", CatCombo, "ID", "Category", "Category");
         }
 
     }

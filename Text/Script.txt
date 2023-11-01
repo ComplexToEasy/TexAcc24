@@ -1,0 +1,62 @@
+create table Category(
+Id int Identity(1,1) Primary key,
+Cname varchar(20)
+)
+
+create procedure InsertCategory
+@name varchar(20)
+as
+insert into Category values(@name)
+
+create procedure UpdateCategory
+@name varchar(20),
+@id int
+as
+Update Category set Cname = @name where id =@id
+
+create procedure DeleteCategory
+@id int
+as
+Delete from Category where id =@id
+
+create procedure GetCategoryData
+as
+select
+id as 'ID',
+cname as 'Category'
+from Category
+order by Cname
+Create table Items(
+Id int identity(1,1) Primary key,
+IName varchar(50) not null,
+PRate decimal(12,2),
+SRate decimal(12,2),
+Status varchar(5) not null,
+CatId int not null
+)
+
+
+
+create procedure [dbo].[InsertItems]
+@iname varchar(50),
+@Status  varchar(5),
+@prate decimal(12,2),
+@srate decimal(12,2),
+@catid int
+as
+Insert into Items(IName, PRate,SRate,Status,CatId)
+values(@iname,@prate,@srate,@Status,@catid)
+
+create procedure [dbo].[UpdateItems]
+@iname varchar(50),
+@Status  varchar(5),
+@prate decimal(12,2),
+@srate decimal(12,2),
+@catid int,
+@id int
+as
+Update Items set IName =@iname, PRate= @prate,SRate = @srate,Status=@Status,CatId= @catid
+where id = @id
+
+
+
